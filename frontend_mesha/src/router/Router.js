@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "../components/Login";
-import SignUp from "../components/SignUp";
+import SignUp from "../components/Signup";
 import Menu from "../components/Menu"
 
 
@@ -17,7 +17,7 @@ function Router() {
                 <Route exact path="/signup">
                     <SignUp/>
                 </Route>
-                <Route exact path="/timeline">
+                <Route exact path="/menu">
                     <Menu/>
                 </Route>               
             </Switch>
