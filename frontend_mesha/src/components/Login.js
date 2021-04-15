@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
   },
   image: {
-    backgroundImage: 'url(https://wallpapercave.com/wp/wp6975861.jpg)',
+    backgroundImage: 'url(https://picsum.photos/1080)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
     theme.palette.type === 'light' ? theme.palette.grey[2] : theme.palette.grey[900],
@@ -76,7 +76,7 @@ function Login() {
       axios.post("http://localhost:3306/user/login", form)
       .then(response => {
         window.localStorage.setItem("token", response.data.token)
-        history.push("/timeline")
+        history.push("/menu")
       })
       .catch(error => {
         const { data } = error.response
@@ -99,7 +99,7 @@ function Login() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            ArtiLogin
+            Mesha Tecnologia Login
           </Typography>
           <form className={classes.form} onSubmit={onSubmitForm}>
             <TextField
