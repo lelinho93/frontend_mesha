@@ -36,7 +36,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   image: {
-    backgroundImage: 'url(https://wallpapercave.com/wp/wp6975861.jpg)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[2] : theme.palette.grey[900],
@@ -59,7 +58,7 @@ export default function SignUp() {
   const classes = useStyles();
   const history = useHistory()
 
-  const { form, onChange } = useForm({ name: "", email: "", nickname: "", password: ""})
+  const { form, onChange } = useForm({ email: "", password: ""})
 
   const handleInputChange = (event) => {
       const { value, name } = event.target
@@ -73,7 +72,7 @@ export default function SignUp() {
       axios.post("http://localhost:3306/user/signup", form)
     .then(response => {
       window.localStorage.setItem("token", response.data.token)
-      history.push("/insert-image")  
+      history.push("/menu")  
     })
     .catch(error => {
       const { data } = error.response
@@ -82,7 +81,7 @@ export default function SignUp() {
   }  
 
   const goToLogin = () => {
-      history.push("/")
+      history.push("/login")
   }
 
   return (
@@ -96,36 +95,8 @@ export default function SignUp() {
           Sign up
         </Typography>
         <form className={classes.form} onSubmit={onSubmitForm} >
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                type={"text"}
-                name={"name"}
-                value={form.name}
-                onChange={handleInputChange}
-                autoComplete="name"                
-                variant="outlined"
-                required
-                fullWidth
-                id="fname"
-                label="Name"
-                autoFocus
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                type={"text"}
-                name={"nickname"}
-                value={form.nickname}
-                onChange={handleInputChange}
-                variant="outlined"
-                required
-                fullWidth
-                id="lastName"
-                label="Nickname"
-                autoComplete="nickname"
-              />
-            </Grid>
+          <Grid container spacing={2}>       
+            
             <Grid item xs={12}>
               <TextField
                 type={"text"}
