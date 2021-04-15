@@ -6,9 +6,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Timeline from './Timeline';
-import InsertImage from './InsertImage';
 import { useHistory } from 'react-router';
+import Main from './Main'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -85,19 +84,19 @@ export default function NavTabs() {
           onChange={handleChange}
           aria-label="nav tabs example"
         >
-          <LinkTab label="Feed" href="/drafts" {...a11yProps(0)} />
-          <LinkTab label="Postar" href="/trash" {...a11yProps(1)} />
-          <LinkTab label="Page Three" href="/spam" {...a11yProps(2)} />
+          <LinkTab label="Principal" href="/drafts" {...a11yProps(0)} />
+          <LinkTab label="Detalhes" href="/trash" {...a11yProps(1)} />
+          <LinkTab label="Checkout" href="/spam" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Timeline/>
+        <Main/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <InsertImage/>
+        Detalhes do Atendimento
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Page Three
+        Pagamento
       </TabPanel>
     </div>
   );
