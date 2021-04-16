@@ -2,7 +2,7 @@
 
 * Objetivo:
 
-Esse projeto foi densenvolvido para processo seletivo da Mesha Tecnologia, o objetivo é um sistema de serviços que devem ser realizados através de um login de um usuário, podendo contratar serviços.
+Esse projeto foi desenvolvido para processo seletivo da Mesha Tecnologia, o objetivo é um sistema de serviços que devem ser realizados através de um login de um usuário, podendo contratar serviços.
 
 Obs.: somente foi densenvolvido a parte de login e signup com autenticação e uma página de serviços com renderização condicional onde pode ser implementado o restante das lógicas e regras de negócio.
 
