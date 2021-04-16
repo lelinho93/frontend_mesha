@@ -14,11 +14,11 @@ function TabPanel(props) {
 
   const history = useHistory()
 
-  if(!localStorage.getItem("token")){
+  if(!localStorage.getItem("token")){ // Autenticação
       history.push("/")
   }
 
-  return (
+  return ( //Componente de renderização condicional de 3 abas
     <div
       role="tabpanel"
       hidden={value !== index}

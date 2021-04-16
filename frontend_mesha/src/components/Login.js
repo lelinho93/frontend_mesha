@@ -29,7 +29,7 @@ function Copyright() {
   );
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({ //Gerenciador de estilos material-ui
   root: {
     height: '100vh',
   },
@@ -71,7 +71,7 @@ function Login() {
       onChange(value, name)
   }
 
-  const onSubmitForm = (event) => {
+  const onSubmitForm = (event) => { // Função que recebe o evento e faz a requisição para API
       event.preventDefault()
       axios.post("http://localhost:3306/user/login", form)
       .then(response => {
@@ -89,7 +89,7 @@ function Login() {
     history.push("/signup")
   }
 
-  return (
+  return ( //Componentes Material-ui
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />

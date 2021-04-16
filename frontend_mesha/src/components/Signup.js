@@ -67,7 +67,7 @@ export default function SignUp() {
   }
 
 
-  const onSubmitForm = (event) => {    
+  const onSubmitForm = (event) => { //Função para cadastrar um novo usuário 
       event.preventDefault() 
       axios.post("http://localhost:3306/user/signup", form)
     .then(response => {
@@ -84,7 +84,7 @@ export default function SignUp() {
       history.push("/login")
   }
 
-  return (
+  return ( //Componente Material-ui
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
